@@ -1,7 +1,11 @@
+
+/*============ fonctions generales ===========*/
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    text-decoration :none;
+  list-style: none;
+    
 }
 body {
     font-family: Arial, sans-serif;
@@ -10,75 +14,137 @@ body {
     background-color: #F5F5F5;
 }
 
-header {
-    background-color: #EEE5E9;
-    padding: 30px 0;
-    border-bottom: 1px solid #E0E0E0;
+/*============ section HEADER ET NAVBAR ===========*/
+header{
+ height: 30vh;
+ width: 100VW;
+ background-color: #ffffff;
 }
 
-.container {
-    width: 90%;
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    
+.navbar {
+ position :absolute;
+padding: 50px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+width: 100%;
+box-sizing: border-box ;
 }
 
-.logo img{
-    width: 60x;
-    height : 60px;
-    
+ .navbar a {
+ color: black;
+ 
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 20px;
-}
-
-nav ul li {
-    margin: 0 1em;
-}
-
-nav ul li a {
-    color: black;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.user img {
-    width: 25px;
-    height: auto;
-    display: flex;
-    margin-left: 20px;
-}
-
-.section {
-    padding: 2em 1em;
-    text-align: center;
-}
-
-nav a {
-    text-decoration: none;
-    color: #333;
-    font-size: 16px;
-}
-
-.hero {
-    background-color: #2B6F72;
-    display: flex;
-    color: white;
-    text-align: left;
-    font-size: 50px;
-    padding: 150px 100px;
-    position: relative;
-}
-
-
-.hero-button {
+ .navbar .logo img{
+   width: 60px;
+   height : 60px;
   
+}
+
+ .navbar .nav-links ul{
+ display: flex;
+}
+
+ .navbar .nav-links ul li{
+ margin: 0 25px;
+ 
+}
+
+
+ .navbar .menu-hamburger {
+ display: none;
+ position : absolute;
+ top: 50px;
+ right: 50px;
+ width: 35px;
+}
+
+
+
+@media screen and (max-width: 900px) {
+ .navbar {
+   padding : 0;
+ }
+
+ .navbar .logo {
+   position :absolute;
+   top: 50px;
+   left: 50px;
+ }
+ .nav-links ul{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+ }
+ 
+ .navbar .menu-hamburger{
+   display: block;
+ }
+
+ .nav-links{
+   top : 0;
+   left: 0;
+   position :absolute;
+   background-color: rgba(0, 0, 0, 0.632);
+   width:100%;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin-left: -100%;
+   transition: all 0.5s ease;
+ }
+
+ .navbar .nav-links ul li {
+    margin : 20px 0px;
+    font-size: 1.2em;
+ }
+}
+
+ .mobile-menu {
+    padding : 0;
+    margin-left: 0px;
+    flex-direction: column;
+}
+
+ .nav-links ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*============ section HERO===========*/
+ .hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #2B6F72;
+    flex-wrap: wrap;
+   
+  }
+
+  .hero-content {
+    margin-left: 70px;
+  }
+  
+  .hero-title {
+    color: white;
+    font-size: 50px;
+    margin-right: 20px;
+    margin-bottom: 50px;
+    order: 1;
+  }
+  
+  .hero-image {
+    max-width: 100%;
+    height: auto;
+    max-height: 500px;
+    order: 2;
+  }
+  
+  .hero-button {
     background-color: white;
     color: #2B6F72;
     border: none;
@@ -88,75 +154,82 @@ nav a {
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
-}
+    order: 3;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .hero {
+        flex-direction: column;
+        text-align: center;
+    }
+  
+    .hero-title {
+        font-size: 1.5em;
+        order: 1; /* Titre en premier */
+    }
+  
+    .hero-image {
+        order: 2; /* Image en deuxième */
+        max-width: 100%;
+        max-height: 200px;
+    }
+  
+    .hero-button {
+        order: 3; /* Bouton en troisième */
+        font-size: 1em;
+    }
+  }
+  
 
-.hero-image img {
-    width: 350px;
-    height: auto;
-    display: flex;
-    margin-left: 20px;
 
-    
-}
+/*============ section CARD OFFRE ===========*/
 
-.hero::before {
-    content: '';
-    background: url('path_to_image.png') no-repeat center center / cover;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 100%;
-    height: 100%;
-    opacity: 0.2; /* Adjust opacity as needed */
-}
-
-.offres {
-    background-color:  EEE5E9;
+ .offres {
+    background-color: #EEE5E9;
     margin: 1em 0;
     padding: 30px;
     border-radius: 8px;
     
 }
-.card-container{
+ .card-container{
     display: flex;
-  justify-content: center;
+    justify-content: center;
     flex-wrap :wrap;
     margin-top: 100px;
 
 }
 
-.card{
+ .card{
     width: 325px;
     background-color: #f0f0f0;
     border-radius: 8px;
     overflow: hidden;
-    box-shadow: 0px 2px 4px(0,0,0,0,2);
-    margin:20px;
+    margin: 20px;
 }
 
-.card img{
-width: 100%;
-height: 250px;
+ .card img{
+    width: 100%;
+    height: 250px;
 }
 
-.card-content{
+ .card-content{
     padding: 16px;
     
 }
 
-.card-content h3{
+ .card-content h3{
     font-size: 28px;
     margin-bottom: 8px;
 }
 
-.card-content p{
+ .card-content p{
     color: #666;
     font-size: 15px;
     line-height : 1.3;
 }
 
-.card-content .bouton{
+ .card-content .bouton{
     display: inline-block;
     padding : 8px 16px;
     background-color: #333;
@@ -167,73 +240,95 @@ height: 250px;
 
 }
 
-.avis {
-    background-color: #2B6F72;
-    margin: 1em 0;
-    padding: 2em;
-    border-radius: 8px;
-   
-}
-.avis h2{
-    color: #E0E0E0;
-}
 
-.carouselExampleIndicators {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #e67d0c;
-    margin: 5px;
+
+/*============ section AVIS ===========*/
+
+
+ .testimonial-section {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: #2B6F72;
   }
   
-  .carousel-indicators {
-    background-color: #2B6F72;
-    border-top: 40px;
+  .carousel {
+    position: relative;
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
   }
-
-  .card {
-    border-radius: 10px; /* ajoute un rayon de 10px aux coins de la card */
-    
-   
-
-  }
-  .container {
-    margin-left: 20px;
-  }
-
- 
-  .carousel-item.active {
-    display :flex;
-    justify-content: center;
-
+  
+  .carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
   }
   
   .carousel-item {
-    flex: 0 0 300px; /* ajustez la largeur à votre convenance */
-    margin: 0 20px; /* ajustez la marge à votre convenance */
+    min-width: 33.33%;
+    box-sizing: border-box;
+    padding: 0 15px;
   }
   
-  .carousel-control-prev,.carousel-control-next {
+  .testimonial-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .testimonial-footer {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .testimonial-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+  }
+  
+  .arrow {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 1;
+    font-size: 2rem;
+    cursor: pointer;
+    user-select: none;
   }
   
-  .carousel-control-prev {
+  .left-arrow {
     left: 0;
   }
   
-  .carousel-control-next {
+  .right-arrow {
     right: 0;
   }
-
-  .carousel-inner {
-    height: 250px;
+  
+  /* Le Responsive des avis */
+  @media (max-width: 1200px) {
+    .carousel-item {
+        min-width: 50%;
+    }
   }
-
-
-.testimonials {
+  
+  @media (max-width: 768px) {
+    .carousel-item {
+        min-width: 100%;
+    }
+  }
+  
+/*============ section INFOS ===========*/
+ .infos {
     background-color: #2B6F72;
     margin: 1em 0;
     padding: 2em;
@@ -242,7 +337,7 @@ height: 250px;
 }
 
 
-.container1 {
+ .container1 {
     display: flex;
     max-width: 1200px;
     width: 100%;
@@ -250,7 +345,7 @@ height: 250px;
     background-color: #2B6F72; /* Adjust this color if needed */
 }
 
-.info-icons {
+ .info-icons {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -258,41 +353,43 @@ height: 250px;
     padding: 20px;
 }
 
-.icon-box {
+ .icon-box {
     text-align: center;
     color: white;
     margin: 20px 0;
 }
 
-.icon {
+ .icon {
     font-size: 40px;
     margin-bottom: 10px;
 }
 
-.contact-form {
+
+/*============ section FORMULAIRE ===========*/
+ .contact-form {
     flex: 1;
     padding: 20px;
     background-color: #2B6F72;
     border-radius: 10px;
 }
 
-.contact-form h2 {
+ .contact-form h2 {
     color: #ffffff;
 }
 
-.contact-form p {
+ .contact-form p {
     color: #ffffff;
 }
 
-.contact-form label {
+ .contact-form label {
     display: block;
     margin-top: 10px;
     color: #ffffff;
 }
 
-.contact-form input, 
-.contact-form select, 
-.contact-form textarea {
+ .contact-form input, 
+ .contact-form select, 
+ .contact-form textarea {
     width: calc(100% - 20px);
     padding: 10px;
     margin-top: 5px;
@@ -303,7 +400,7 @@ height: 250px;
     color: white;
 }
 
-.contact-form button {
+ .contact-form button {
     padding: 10px 20px;
     border: #ffffff;
     background-color: white;
@@ -313,99 +410,94 @@ height: 250px;
    
 }
 
-.label {
+ .label {
     background-color: #2B6F72;
 }
 
-.contact-form button:hover {
+ .contact-form button:hover {
     background-color: #ffffff;
 }
 
+/*============ section QUALITE ===========*/
 
-
-.qualite {
+ .qualite {
     background-color: #EEE5E9;
 
 }
 
-.container2 {
+ .container2 {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 20px;
 }
 
-.column {
+ .column {
     background-color: #EEE5E9;
     padding: 20px;
     text-align: center;
     width: 200px;
 }
 
-.column img {
+ .column img {
     max-width: 100%;
     height: auto;
     border-radius: 8px 8px 0 0;
 }
 
-.column h2 {
+ .column h2 {
     font-size: 1.5em;
     margin: 10px 0;
 }
 
-.column p {
+ .column p {
     font-size: 1em;
     color: #333;
 }
 
+/*============ section SERVICE ===========*/
 
-
-.service {
+ .service {
     background-color: #2B6F72;
 
 }
 
-.service h2{
+ .service h2{
     color: #E0E0E0;
 }
 
 
-.container3 {
+ .container3 {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 15px;
 }
 
-.column1 {
+ .column1 {
     background-color: #2B6F72;
     padding: 20px;
     text-align: center;
     width: 70px;
 }
 
-.column1 img {
+ .column1 img {
     max-width: 100%;
     height: auto;
     border-radius: 8px 8px 0 0;
 }
 
-.column1 h2 {
+ .column1 h2 {
     font-size: 1em;
     margin: 10px 0;
     color: white;
 }
 
-
+/*============ section FOOTER ===========*/
 
 footer {
     background-color: #3A4F5F;
     color: white;
     text-align: center;
     padding: 1em 0;
-}
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
 }
